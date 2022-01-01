@@ -17,6 +17,7 @@ html {
 
 body {
     background-color: var(--background-color) !important;
+    transition: background-color 1s ease-in;
 }
 
 
