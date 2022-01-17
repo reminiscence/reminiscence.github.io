@@ -1,6 +1,6 @@
 ---
 emoji: 🔮
-title: JavaScript Scope / this
+title: Execution context
 date: '2022-01-05 20:57:00'
 author: Juko
 tags: js execution_context
