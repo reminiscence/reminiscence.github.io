@@ -23,4 +23,5 @@ jobs:
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   GH_PAT: ${{ secrets.API_KEY }}
+                  PUBLISH_BRANCH: gh-pages
                   BUILD_DIR: 'public/'
