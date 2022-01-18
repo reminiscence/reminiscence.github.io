@@ -8,20 +8,13 @@ jobs:
         name: build
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+        - uses: actions/checkout@v2
+          with:
+              token: ${{ secrets.API_KEY }}
+              submodules: true
 
-            - name: npm install
-              run: npm install
-
-            - name: gatsby build
-              env:
-                  GH_API_KEY: ${{ secrets.API_KEY }}
-              run: npm run build
-
-            - name: deploy
-              uses: maxheld83/ghpages@v0.2.1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  GH_PAT: ${{ secrets.API_KEY }}
-                  PUBLISH_BRANCH: gh-pages
-                  BUILD_DIR: 'public/'
+        - uses: enriikke/gatsby-gh-pages-action@v2
+          with:
+              access-token: ${{ secrets.API_KEY }}
+              deploy-branch: gh-pages
+              skip-publish: false
